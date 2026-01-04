@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Placement & Internship Tracker</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <h1>🎯 Placement & Internship Tracker</h1>
+
+  <!-- Dashboard -->
+  <div class="dashboard">
+    <div class="card">Total Applications: <span id="totalApps">0</span></div>
+    <div class="card">Interviews: <span id="interviews">0</span></div>
+    <div class="card">Offers: <span id="offers">0</span></div>
+  </div>
+
+  <!-- Add Application Form -->
+  <form id="appForm">
+    <input type="text" id="company" placeholder="Company Name" required />
+    <input type="text" id="role" placeholder="Role" required />
+
+    <select id="type">
+      <option value="Internship">Internship</option>
+      <option value="Full-Time">Full-Time</option>
+    </select>
+
+    <select id="status">
+      <option value="Applied">Applied</option>
+      <option value="Interview">Interview</option>
+      <option value="Rejected">Rejected</option>
+      <option value="Selected">Selected</option>
+    </select>
+
+    <input type="date" id="deadline" required />
+    <button type="submit">Add Application</button>
+  </form>
+
+  <!-- Applications Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Deadline</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="appList"></tbody>
+  </table>
+
+  <script src="js/storage.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
