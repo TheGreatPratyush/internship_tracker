@@ -17,13 +17,14 @@ function renderApplications() {
       tr.classList.add("deadline-soon");
     }
 
+ 
     tr.innerHTML = `
       <td>${app.company}</td>
       <td>${app.role}</td>
       <td>${app.type}</td>
       <td>${app.status}</td>
       <td>${app.deadline}</td>
-      <td><button onclick="deleteApp(${index})">Delete</button></td>
+      <td><button class="delete-btn" onclick="deleteApp(${index})">Delete</button></td>
     `;
 
     appList.appendChild(tr);
@@ -42,12 +43,13 @@ function deleteApp(index) {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
+
   const app = {
-    company: company.value,
-    role: role.value,
-    type: type.value,
-    status: status.value,
-    deadline: deadline.value
+    company: document.getElementById("company").value,
+    role: document.getElementById("role").value,
+    type: document.getElementById("type").value,
+    status: document.getElementById("status").value,
+    deadline: document.getElementById("deadline").value
   };
 
   const apps = getApplications();
